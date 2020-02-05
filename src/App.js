@@ -6,15 +6,15 @@ import Lux from "@lespantsfancy/lux";
 import Test from "./Test";
 
 export default class App extends Lux.React.ReactorComponent {
-    componentWillMount() {
-        this.context.attach("Tester", new Lux.Node.Node());
-        this.context.getEntity("Tester").prop("cats", 15);
+    // componentWillMount() {
+    //     this.context.attach("Tester", new Lux.Node.Node());
+    //     this.context.getEntity("Tester").prop("cats", 15);
 
-        setTimeout(() => {
-            this.context.getEntity("Tester").prop("cats", 25);
-            console.log(this.context.$());
-        }, 1500);
-    }
+    //     setTimeout(() => {
+    //         this.context.getEntity("Tester").prop("cats", 25);
+    //         console.log(this.context.$());
+    //     }, 1500);
+    // }
 
     render() {        
         return (
