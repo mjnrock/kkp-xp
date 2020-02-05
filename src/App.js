@@ -3,25 +3,18 @@ import { StyleSheet, Text, View } from "react-native";
 
 import Lux from "@lespantsfancy/lux";
 
-import Test from "./Test";
+import Canvas from "./component/Canvas";
 
 export default class App extends Lux.React.ReactorComponent {
-    // componentWillMount() {
-    //     this.context.attach("Tester", new Lux.Node.Node());
-    //     this.context.getEntity("Tester").prop("cats", 15);
-
-    //     setTimeout(() => {
-    //         this.context.getEntity("Tester").prop("cats", 25);
-    //         console.log(this.context.$());
-    //     }, 1500);
-    // }
-
     render() {        
+        // return (
+        //     <View style={ styles.container }>
+        //         <Kanvas />
+        //         <Text>Open up App.js to start working on your app!</Text>
+        //     </View>
+        // );
         return (
-            <View style={ styles.container }>
-                <Text>Open up App.js to start working on your app!</Text>
-                <Test />
-            </View>
+            <Canvas />
         );
     }
 };
