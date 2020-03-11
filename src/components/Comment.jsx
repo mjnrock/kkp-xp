@@ -14,6 +14,8 @@ import SendIcon from '@material-ui/icons/Send';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import CropOriginalIcon from '@material-ui/icons/CropOriginal';
 
+//! window.devicePixelRatio can be used to adjust for mobile
+
 export default class Comment extends React.Component {
     render() {
         return (
@@ -32,7 +34,9 @@ export default class Comment extends React.Component {
                 />
 
                 <CardContent>
-                    { this.props.content }
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        { this.props.content }
+                    </Typography>
                 </CardContent>
             </Card>
         );
