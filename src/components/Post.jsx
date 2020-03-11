@@ -7,24 +7,16 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import FormControl from '@material-ui/core/FormControl';
 
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import SendIcon from '@material-ui/icons/Send';
-import CameraAltIcon from '@material-ui/icons/CameraAlt';
-import CropOriginalIcon from '@material-ui/icons/CropOriginal';
 
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 
 export default class Post extends React.Component {
     constructor(props) {
