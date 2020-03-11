@@ -8,7 +8,7 @@ export default class Kanvas extends React.Component {
         return (
             <WebView
                 source={ CanvasHTML }
-                style={{ marginTop: 20 }}
+                // style={{ marginTop: 20 }}
                 javaScriptEnabled={true}
                 javaScriptEnabledAndroid={true}
                 domStorageEnabled={true}
