@@ -32,7 +32,7 @@ export default class Post extends React.Component {
 
         this.state = {
             comment: "",
-            responses: []
+            posts: []
         };
     }
 
@@ -67,23 +67,34 @@ export default class Post extends React.Component {
                             inputProps={{ 'aria-label': 'add a comment' }}
                             variant="outlined"
                             value={ this.state.comment }
+                            style={{ width: "100%" }}
                             onChange={ e => {
                                 this.setState({
                                     ...this.state,
                                     comment: e.target.value
                                 });
                             }}
+                            onKeyPress={ e => {
+                                if(e.which === 13) {
+                                    const { posts } = this.state;
+            
+                                    posts.push(this.state.comment);
+        
+                                    this.setState({
+                                        posts,
+                                        comment: ""
+                                    });
+                                }
+                            }}
                         />
 
-                        <IconButton type="submit" onClick={ e => {
-                            e.preventDefault();
+                        <IconButton onClick={ e => {
+                            const { posts } = this.state;
 
-                            const { responses } = this.state;
-
-                            responses.push(this.state.comment);
+                            posts.push(this.state.comment);
 
                             this.setState({
-                                responses: responses,
+                                posts,
                                 comment: ""
                             });
                         }}>
@@ -94,7 +105,7 @@ export default class Post extends React.Component {
 
                 <List>
                     {
-                        this.state.responses.map((res, i) => (
+                        this.state.posts.map((res, i) => (
                             <ListItem key={ i }>
                                 <Comment content={ res }/>
                             </ListItem>
