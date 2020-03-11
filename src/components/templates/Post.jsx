@@ -32,11 +32,7 @@ export default class Post extends React.Component {
 
         this.state = {
             comment: "",
-            comments: [
-                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum esse velit praesentium aperiam ea ratione quasi quia! Cum dicta doloremque id tempora voluptates ratione assumenda, quam accusamus facilis, soluta repudiandae.",
-                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum esse velit praesentium aperiam ea ratione quasi quia! Cum dicta doloremque id tempora voluptates ratione assumenda, quam accusamus facilis, soluta repudiandae.",
-                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum esse velit praesentium aperiam ea ratione quasi quia! Cum dicta doloremque id tempora voluptates ratione assumenda, quam accusamus facilis, soluta repudiandae.",
-            ]
+            posts: []
         };
     }
 
@@ -45,35 +41,20 @@ export default class Post extends React.Component {
             <div>
                 <Card variant="outlined">
                     <CardActionArea>
-                        {
-                            this.props.image ? (
-                                <CardMedia
-                                    component="img"
-                                    image={ this.props.image }
-                                    alt="post picture"
-                                />
-                            ) : null
-                        }
-                        {
-                            this.props.title || this.props.description ? (
-                                <CardContent>
-                                    {
-                                        this.props.title ? (
-                                            <Typography gutterBottom variant="h5" component="h2">
-                                                { this.props.title }
-                                            </Typography>
-                                        ) : null
-                                    }
-                                    {
-                                        this.props.description ? (
-                                            <Typography variant="body2" color="textSecondary" component="p">
-                                                { this.props.description }
-                                            </Typography>
-                                        ) : null
-                                    }
-                                </CardContent>
-                            ) : null
-                        }
+                        <CardMedia
+                            component="img"
+                            alt="Skwrl"
+                            image="/assets/images/squirrel-01.jpg"
+                            title="Skwrl"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Skwrl
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                This am skwrl.  Him eats nutz and frootz.  Am a tiny trash panda.
+                            </Typography>
+                        </CardContent>
                     </CardActionArea>
 
                     <CardActions>
@@ -95,7 +76,7 @@ export default class Post extends React.Component {
                             }}
                             onKeyPress={ e => {
                                 if(e.which === 13) {
-                                    const { comments: posts } = this.state;
+                                    const { posts } = this.state;
             
                                     posts.push(this.state.comment);
         
@@ -108,12 +89,12 @@ export default class Post extends React.Component {
                         />
 
                         <IconButton onClick={ e => {
-                            const { comments } = this.state;
+                            const { posts } = this.state;
 
-                            comments.push(this.state.comment);
+                            posts.push(this.state.comment);
 
                             this.setState({
-                                comments,
+                                posts,
                                 comment: ""
                             });
                         }}>
@@ -124,7 +105,7 @@ export default class Post extends React.Component {
 
                 <List>
                     {
-                        this.state.comments.map((res, i) => (
+                        this.state.posts.map((res, i) => (
                             <ListItem key={ i }>
                                 <Comment content={ res }/>
                             </ListItem>

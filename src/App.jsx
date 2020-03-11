@@ -6,7 +6,11 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Post />
+                <Post
+                    image={ `/assets/images/squirrel-01.jpg` }
+                    title={ `SkWrL` }
+                    description={ `This is some nonsense about the squirrel.` }
+                />
             </div>
         );
     }
