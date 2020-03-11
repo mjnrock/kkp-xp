@@ -1,7 +1,7 @@
 import React from 'react';
 // import HybridApp from './src/App';
 
-import WebApp from "./WebApp";
+import WebApp from "./components/WebApp";
 
 const App = (props) => {
     return (        
